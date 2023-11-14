@@ -1,0 +1,31 @@
+
+  <div class="apolice-seguro">
+    <div class="input-container">
+      <label for="nome">Nome do Segurado</label>
+      <input placeholder="Insira o nome do segurado" type="text" id="nome" [(ngModel)]="nome">
+    </div>
+
+    <div class="input-container">
+      <label for="sexo">Sexo</label>
+      <select id="sexo" [(ngModel)]="sexo">
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <label for="idade">Idade</label>
+      <input placeholder="Insira a idade" type="number" id="idade" [(ngModel)]="idade">
+    </div>
+
+    <div class="input-container">
+      <label for="valorAutomovel">Valor do Automóvel</label>
+      <input placeholder="Insira o valor do automóvel" type="number" id="valorAutomovel" [(ngModel)]="valorAutomovel">
+    </div>
+
+    <button (click)="calcularApolice()">Calcular</button>
+
+    <div *ngIf="valorApolice !== null">
+      <p>Valor: {{ valorApolice | currency:'BRL':'symbol' }}</p>
+    </div>
+  </div>
